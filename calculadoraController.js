@@ -29,6 +29,15 @@ function subtrair() {
   }
 }
 
+function igual() {
+  visor.value = (visor.value.replace(/\s/g, "").match(/[+-]?([0-9.]+)/g) || []).reduce(function (
+    sum,
+    value
+  ) {
+    return parseFloat(sum) + parseFloat(value);
+  });
+}
+
 function limpar() {
   visor.value = "";
 }
